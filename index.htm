@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./style.css" />
@@ -10,27 +9,29 @@
 	<body>
 		<div class="tic-tac-toe-container">
 			<table>
-				<tr class='upper-part'>
-					<td class='upper-cell'> </tdс>
-					<td class='upper-cell'> </td>
-					<td class='upper-cell'> </td>
+				<tr class="upper-part">
+					<td class="upper-cell"></td>
+					<td class="upper-cell"></td>
+					<td class="upper-cell"></td>
 				</tr>
-				<tr class='middle-part'>
-					<td class='middle-cell'> </td>
-					<td class='middle-cell'> </td>
-					<td class='middle-cell'> </td>
+				<tr class="middle-part">
+					<td class="middle-cell"></td>
+					<td class="middle-cell"></td>
+					<td class="middle-cell"></td>
 				</tr>
-				<tr class='lower-part'>
-					<td class='lower-cell'> </td>
-					<td class='lower-cell'> </td>
-					<td class='lower-cell'> </td>
+				<tr class="lower-part">
+					<td class="lower-cell"></td>
+					<td class="lower-cell"></td>
+					<td class="lower-cell"></td>
 				</tr>
 			</table>
 		</div>
-		<div class="controls" style="text-align: center; margin-top: 20px;">
+		<div class="controls">
+			<span>Победы X: <span id="x-score">0</span></span>
 			<button class="reset-btn">Новая игра</button>
+			<span>Победы O: <span id="o-score">0</span></span>
+			<span>Ничьи: <span id="draw-score">0</span></span>
 		</div>
-
 		<script src="./script.js"></script>
 	</body>
 </html>

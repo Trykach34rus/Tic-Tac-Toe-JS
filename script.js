@@ -2,7 +2,6 @@ const upperCell = document.querySelectorAll('.upper-cell')
 const middleCell = document.querySelectorAll('.middle-cell')
 const lowerCell = document.querySelectorAll('.lower-cell')
 const resetBtn = document.querySelector('.reset-btn')
-
 let board = [
 	['', '', ''],
 	['', '', ''],
@@ -10,34 +9,41 @@ let board = [
 ]
 let currentPlayer = 'X'
 let gameOver = false
+let xScore = 0
+let oScore = 0
+let drawScore = 0
 
 function checkGameStatus() {
 	const winnerRow = checBoard(board)
 	const winnerDiag = checDiagonal(board)
 	const winner = winnerRow || winnerDiag
-
 	if (winner) {
+		if (winner === 'X') {
+			xScore++
+			document.getElementById('x-score').textContent = xScore
+		} else {
+			oScore++
+			document.getElementById('o-score').textContent = oScore
+		}
 		alert(`Победитель: ${winner}`)
 		gameOver = true
 		return true
 	}
-
 	let isDraw = board.every(row => row.every(cell => cell !== ''))
 	if (isDraw) {
+		drawScore++
+		document.getElementById('draw-score').textContent = drawScore
 		alert('Ничья!')
 		gameOver = true
 		return true
 	}
-
 	return false
 }
 
 function handleClick(row, col, element) {
 	if (gameOver || board[row][col] !== '') return
-
 	board[row][col] = currentPlayer
 	element.textContent = currentPlayer
-
 	if (!checkGameStatus()) {
 		currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
 	}
@@ -102,7 +108,6 @@ function resetGame() {
 	]
 	currentPlayer = 'X'
 	gameOver = false
-
 	upperCell.forEach(cell => (cell.textContent = ''))
 	middleCell.forEach(cell => (cell.textContent = ''))
 	lowerCell.forEach(cell => (cell.textContent = ''))

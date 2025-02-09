@@ -1,12 +1,25 @@
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 20px;
+}
+
 .tic-tac-toe-container {
 	max-width: 600px;
 	max-height: 600px;
-	background-color: black;
-	padding: 10px;
+	background-color: #222;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+table {
+	border-collapse: collapse;
 }
 
 .upper-cell,
@@ -15,18 +28,21 @@
 	width: 100px;
 	height: 100px;
 	background-color: white;
-	border: 1px solid black;
+	border: 2px solid #444;
 	text-align: center;
 	vertical-align: middle;
-	font-size: 24px;
+	font-size: 48px;
+	font-weight: bold;
+	color: #333;
 	cursor: pointer;
-	transition: background-color 0.3s;
+	transition: background-color 0.3s, transform 0.2s;
 }
 
 .upper-cell:hover,
 .middle-cell:hover,
 .lower-cell:hover {
-	background-color: lightgray;
+	background-color: #ddd;
+	transform: scale(1.05);
 }
 
 .reset-btn {
@@ -37,14 +53,28 @@
 	color: white;
 	cursor: pointer;
 	border-radius: 4px;
-	transition: background-color 0.3s;
+	transition: background-color 0.3s, transform 0.2s;
+	margin: 0 10px; /* Отступы вокруг кнопки */
 }
 
 .reset-btn:hover {
 	background-color: #45a049;
+	transform: scale(1.05);
 }
 
 .controls {
-	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 	margin-top: 20px;
+	color: #333;
+}
+
+.controls span {
+	font-size: 20px;
+	margin: 0 10px;
+	padding: 10px 15px;
+	background-color: #45a049;
+	color: white;
+	border-radius: 4px;
 }
